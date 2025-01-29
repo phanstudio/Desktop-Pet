@@ -1,20 +1,175 @@
-[gd_scene load_steps=5 format=3 uid="uid://bswp71hrqe6mk"]
+[gd_scene load_steps=11 format=3 uid="uid://bswp71hrqe6mk"]
 
-[ext_resource type="PackedScene" uid="uid://bmud1eik4a6n" path="res://scenes/level.tscn" id="1_1bf1f"]
 [ext_resource type="Script" path="res://scripts/Main.gd" id="1_t1gte"]
 [ext_resource type="PackedScene" uid="uid://c3464rjd3hxek" path="res://scenes/view_window.tscn" id="2_8qonj"]
-[ext_resource type="PackedScene" uid="uid://cbpn4rtsqt00o" path="res://scenes/character.tscn" id="2_hgbp2"]
+[ext_resource type="Texture2D" uid="uid://yqop6luuq8gp" path="res://tilesets/anti_control_tiles.png" id="4_hew2u"]
+[ext_resource type="PackedScene" uid="uid://gtf6762500dr" path="res://scenes/characterai.tscn" id="4_n001u"]
+[ext_resource type="Texture2D" uid="uid://btceswu26pioa" path="res://tilesets/prop_tiles.png" id="5_fr7u5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kugq3"]
+size = Vector2(819, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjxk0"]
+size = Vector2(24.5, 220)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2fdm"]
+texture = ExtResource("4_hew2u")
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_right_corner = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/terrains_peering_bit/right_side = 0
+1:0/0/terrains_peering_bit/bottom_right_corner = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0/terrains_peering_bit/bottom_left_corner = 0
+1:0/0/terrains_peering_bit/left_side = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 0
+2:0/0/terrains_peering_bit/bottom_side = 0
+2:0/0/terrains_peering_bit/bottom_left_corner = 0
+2:0/0/terrains_peering_bit/left_side = 0
+3:0/0 = 0
+3:0/0/terrain_set = 0
+3:0/0/terrain = 0
+3:0/0/terrains_peering_bit/bottom_side = 0
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrain = 0
+0:1/0/terrains_peering_bit/right_side = 0
+0:1/0/terrains_peering_bit/bottom_right_corner = 0
+0:1/0/terrains_peering_bit/bottom_side = 0
+0:1/0/terrains_peering_bit/top_side = 0
+0:1/0/terrains_peering_bit/top_right_corner = 0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 0
+1:1/0/terrains_peering_bit/right_side = 0
+1:1/0/terrains_peering_bit/bottom_right_corner = 0
+1:1/0/terrains_peering_bit/bottom_side = 0
+1:1/0/terrains_peering_bit/bottom_left_corner = 0
+1:1/0/terrains_peering_bit/left_side = 0
+1:1/0/terrains_peering_bit/top_left_corner = 0
+1:1/0/terrains_peering_bit/top_side = 0
+1:1/0/terrains_peering_bit/top_right_corner = 0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrain = 0
+2:1/0/terrains_peering_bit/bottom_side = 0
+2:1/0/terrains_peering_bit/bottom_left_corner = 0
+2:1/0/terrains_peering_bit/left_side = 0
+2:1/0/terrains_peering_bit/top_left_corner = 0
+2:1/0/terrains_peering_bit/top_side = 0
+3:1/0 = 0
+3:1/0/terrain_set = 0
+3:1/0/terrain = 0
+3:1/0/terrains_peering_bit/bottom_side = 0
+3:1/0/terrains_peering_bit/top_side = 0
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrain = 0
+0:2/0/terrains_peering_bit/right_side = 0
+0:2/0/terrains_peering_bit/top_side = 0
+0:2/0/terrains_peering_bit/top_right_corner = 0
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrain = 0
+1:2/0/terrains_peering_bit/right_side = 0
+1:2/0/terrains_peering_bit/left_side = 0
+1:2/0/terrains_peering_bit/top_left_corner = 0
+1:2/0/terrains_peering_bit/top_side = 0
+1:2/0/terrains_peering_bit/top_right_corner = 0
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrain = 0
+2:2/0/terrains_peering_bit/left_side = 0
+2:2/0/terrains_peering_bit/top_left_corner = 0
+2:2/0/terrains_peering_bit/top_side = 0
+3:2/0 = 0
+3:2/0/terrain_set = 0
+3:2/0/terrain = 0
+3:2/0/terrains_peering_bit/top_side = 0
+0:3/0 = 0
+0:3/0/terrain_set = 0
+0:3/0/terrain = 0
+0:3/0/terrains_peering_bit/right_side = 0
+1:3/0 = 0
+1:3/0/terrain_set = 0
+1:3/0/terrain = 0
+1:3/0/terrains_peering_bit/right_side = 0
+1:3/0/terrains_peering_bit/left_side = 0
+2:3/0 = 0
+2:3/0/terrain_set = 0
+2:3/0/terrain = 0
+2:3/0/terrains_peering_bit/left_side = 0
+3:3/0 = 0
+3:3/0/terrain_set = 0
+3:3/0/terrain = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qedkn"]
+texture = ExtResource("5_fr7u5")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+2:2/size_in_atlas = Vector2i(2, 1)
+2:2/0 = 0
+0:1/size_in_atlas = Vector2i(2, 2)
+0:1/0 = 0
+2:1/size_in_atlas = Vector2i(2, 1)
+2:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_u65mf"]
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+sources/0 = SubResource("TileSetAtlasSource_e2fdm")
+sources/1 = SubResource("TileSetAtlasSource_qedkn")
 
 [node name="Main" type="Node"]
 script = ExtResource("1_t1gte")
-main_camera = NodePath("Character/Camera2D")
+main_camera = NodePath("Character2/Camera2D")
 view_window = ExtResource("2_8qonj")
 
-[node name="Level" parent="." instance=ExtResource("1_1bf1f")]
+[node name="Character2" parent="." instance=ExtResource("4_n001u")]
+position = Vector2(-3, -67)
+patrol_range = 200.0
 
-[node name="Character" parent="." instance=ExtResource("2_hgbp2")]
-position = Vector2(0, -80)
-
-[node name="Camera2D" type="Camera2D" parent="Character"]
+[node name="Camera2D" type="Camera2D" parent="Character2"]
 offset = Vector2(0, -16)
 zoom = Vector2(3, 3)
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 14)
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-3.5, -2)
+shape = SubResource("RectangleShape2D_kugq3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-4, -240)
+shape = SubResource("RectangleShape2D_kugq3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-401.25, -122)
+shape = SubResource("RectangleShape2D_qjxk0")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(394, -121)
+shape = SubResource("RectangleShape2D_qjxk0")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_u65mf")
+format = 2
+layer_0/tile_data = PackedInt32Array(65561, 131072, 2, 25, 131072, 1, 65560, 65536, 2, 24, 65536, 1, 65559, 65536, 2, 23, 65536, 0, 65558, 65536, 2, 22, 65536, 0, 65557, 65536, 2, 21, 65536, 0, 65556, 65536, 2, 20, 65536, 0, 65555, 65536, 2, 19, 65536, 0, 65554, 65536, 2, 18, 65536, 0, 65553, 65536, 2, 17, 65536, 0, 65552, 65536, 2, 16, 65536, 0, 65551, 65536, 2, 15, 65536, 0, 65550, 65536, 2, 14, 65536, 0, 65549, 65536, 2, 13, 65536, 0, 65548, 65536, 2, 12, 65536, 0, 65547, 65536, 2, 11, 65536, 0, 65546, 65536, 2, 10, 65536, 0, 65545, 65536, 2, 9, 65536, 0, 65544, 65536, 2, 8, 65536, 0, 65543, 65536, 2, 7, 65536, 0, 65542, 65536, 2, 6, 65536, 0, 65541, 65536, 2, 5, 65536, 0, 65540, 65536, 2, 4, 65536, 0, 65539, 65536, 2, 3, 65536, 0, 65538, 65536, 2, 2, 65536, 0, 65537, 65536, 2, 1, 65536, 0, 65536, 65536, 2, 0, 65536, 0, 131071, 65536, 2, 65535, 65536, 0, 131070, 65536, 2, 65534, 65536, 0, 131069, 65536, 2, 65533, 65536, 0, 131068, 65536, 2, 65532, 65536, 0, 131067, 65536, 2, 65531, 65536, 0, 131066, 65536, 2, 65530, 65536, 0, 131065, 65536, 2, 65529, 65536, 0, 131064, 65536, 2, 65528, 65536, 0, 131063, 65536, 2, 65527, 65536, 0, 131062, 65536, 2, 65526, 65536, 0, 131061, 65536, 2, 65525, 65536, 0, 131060, 65536, 2, 65524, 65536, 0, 131059, 65536, 2, 65523, 65536, 0, 131058, 65536, 2, 65522, 65536, 0, 131057, 65536, 2, 65521, 65536, 0, 131056, 65536, 2, 65520, 65536, 0, 131055, 65536, 2, 65519, 65536, 0, 131054, 65536, 2, 65518, 65536, 0, 131053, 65536, 2, 65517, 65536, 0, 131052, 65536, 2, 65516, 65536, 0, 131051, 65536, 2, 65515, 65536, 0, 131050, 65536, 2, 65514, 65536, 0, 131049, 65536, 2, 65513, 65536, 0, 131048, 65536, 2, 65512, 65536, 0, 131047, 65536, 2, 65511, 65536, 1, 131046, 0, 2, 65510, 0, 1, -65511, 131072, 1, -131047, 131072, 1, -196583, 131072, 1, -262119, 131072, 1, -327655, 131072, 1, -393191, 131072, 1, -458727, 131072, 1, -524263, 131072, 1, -589799, 131072, 1, -655335, 131072, 1, -720871, 131072, 1, -786407, 131072, 1, -851943, 131072, 1, -917479, 131072, 1, -983015, 131072, 0, -65512, 0, 1, -131048, 0, 1, -196584, 0, 1, -262120, 0, 1, -327656, 0, 1, -393192, 0, 1, -458728, 0, 1, -524264, 0, 1, -589800, 0, 1, -655336, 0, 1, -720872, 0, 1, -786408, 0, 1, -851944, 0, 1, -917480, 65536, 1, -983016, 65536, 0, -917481, 65536, 2, -983017, 65536, 0, -917482, 65536, 2, -983018, 65536, 0, -917483, 65536, 1, -983019, 65536, 0, -917484, 65536, 1, -983020, 65536, 0, -917485, 65536, 1, -983021, 65536, 0, -917486, 65536, 1, -983022, 65536, 0, -917487, 65536, 1, -983023, 65536, 0, -917488, 65536, 1, -983024, 65536, 0, -917489, 65536, 1, -983025, 65536, 0, -917490, 65536, 1, -983026, 65536, 0, -917491, 65536, 1, -983027, 65536, 0, -917492, 65536, 1, -983028, 65536, 0, -917493, 65536, 1, -983029, 65536, 0, -917494, 65536, 1, -983030, 65536, 0, -917495, 65536, 1, -983031, 65536, 0, -917496, 65536, 1, -983032, 65536, 0, -917497, 65536, 1, -983033, 65536, 0, -917498, 65536, 1, -983034, 65536, 0, -917499, 65536, 1, -983035, 65536, 0, -917500, 65536, 1, -983036, 65536, 0, -917501, 65536, 1, -983037, 65536, 0, -917502, 65536, 1, -983038, 65536, 0, -917503, 65536, 1, -983039, 65536, 0, -917504, 65536, 1, -983040, 65536, 0, -851969, 65536, 1, -917505, 65536, 0, -851970, 65536, 1, -917506, 65536, 0, -851971, 65536, 1, -917507, 65536, 0, -851972, 65536, 1, -917508, 65536, 0, -851973, 65536, 1, -917509, 65536, 0, -851974, 65536, 1, -917510, 65536, 0, -851975, 65536, 1, -917511, 65536, 0, -851976, 65536, 1, -917512, 65536, 0, -851977, 65536, 1, -917513, 65536, 0, -851978, 65536, 1, -917514, 65536, 0, -851979, 65536, 1, -917515, 65536, 0, -851980, 65536, 1, -917516, 65536, 0, -851981, 65536, 1, -917517, 65536, 0, -851982, 65536, 1, -917518, 65536, 0, -851983, 65536, 1, -917519, 65536, 0, -851984, 65536, 1, -917520, 65536, 0, -851985, 65536, 1, -917521, 65536, 0, -851986, 65536, 1, -917522, 65536, 0, -851987, 65536, 1, -917523, 65536, 0, -851988, 65536, 1, -917524, 65536, 0, -851989, 65536, 1, -917525, 65536, 0, -851990, 65536, 1, -917526, 65536, 0, -851991, 65536, 1, -917527, 65536, 0, -851992, 65536, 1, -917528, 65536, 0, -851993, 65536, 1, -917529, 65536, 0, -851994, 0, 1, -917530, 0, 0, -25, 65536, 1, -65561, 65536, 1, -131097, 65536, 1, -196633, 65536, 1, -262169, 65536, 1, -327705, 65536, 1, -393241, 65536, 1, -458777, 65536, 1, -524313, 65536, 1, -589849, 65536, 1, -655385, 65536, 1, -720921, 65536, 1, -786457, 65536, 1, -26, 0, 1, -65562, 0, 1, -131098, 0, 1, -196634, 0, 1, -262170, 0, 1, -327706, 0, 1, -393242, 0, 1, -458778, 0, 1, -524314, 0, 1, -589850, 0, 1, -655386, 0, 1, -720922, 0, 1, -786458, 0, 1, -21, 131073, 1, -65516, 196609, 3, -65523, 131073, 2, -6, 131073, 2, -65520, 1, 805306369, -9, 1, 0, -19, 1, 0, -24, 1, 3, -720920, 1, 1342177283, -393240, 1, 1610612737, -589801, 1, 1610612737, -65527, 65537, 3, -65526, 65537, 3, -65525, 65537, 3, -18, 65537, 3, -17, 196609, 3, -16, 131073, 3, -15, 65537, 3, -14, 131073, 3, -13, 196609, 3, -12, 196609, 3, -65532, 196609, 3, -65531, 196609, 3, -65530, 131073, 3, -65529, 65537, 3, -65515, 131073, 3, -65514, 131073, 3, -65513, 65537, 3, -851945, 196609, 805306371, -851946, 65537, 805306371, -851947, 196609, 805306371, -851948, 196609, 805306371, -851949, 65537, 805306371, -851950, 65537, 805306371, -851951, 131073, 805306371, -851952, 196609, 805306371, -851953, 131073, 805306371, -786449, 131073, 805306371, -786448, 196609, 805306371, -786447, 196609, 805306371, -786446, 131073, 805306371, -786445, 65537, 805306371, -786444, 196609, 805306371, -786443, 131073, 805306371, -786442, 196609, 805306371, -589848, 196609, 1342177283)

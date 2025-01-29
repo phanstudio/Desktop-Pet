@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" load_steps=7 format=3 uid="uid://bsgkwdyqv7k7r"]
 
-[ext_resource type="Texture2D" uid="uid://bgx8aenrctgs5" path="res://assets/sprites/tilesets/terrain_tiles.png" id="1_3i8xt"]
-[ext_resource type="Texture2D" uid="uid://cqvkxnwurswre" path="res://assets/sprites/tilesets/background_tiles.png" id="2_v7i1v"]
+[ext_resource type="Texture2D" uid="uid://bgx8aenrctgs5" path="res://tilesets/terrain_tiles.png" id="1_3i8xt"]
+[ext_resource type="Texture2D" uid="uid://cqvkxnwurswre" path="res://tilesets/background_tiles.png" id="2_v7i1v"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ndgos"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)

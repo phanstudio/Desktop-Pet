@@ -15,7 +15,7 @@ func _ready() -> void:
 	transient = true # Make the window considered as a child of the main window
 	close_requested.connect(queue_free) # Actually close the window when clicking the close button
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	velocity = position - last_position
 	last_position = position
 	_Camera.position = get_camera_pos_from_window()

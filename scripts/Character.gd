@@ -40,6 +40,7 @@ func _process(_delta):
 	if on_ground:
 		if target_speed != 0.0:
 			_StateMachine.travel("run")
+			
 		else:
 			_StateMachine.travel("idle")
 	else:

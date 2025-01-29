@@ -8,7 +8,7 @@ class_name MovementProvider
 var provider_dir: float = 0.0
 var provider_jump: bool = false
 
-func _process(delta):
+func _process(_delta):
 	if _Character:
 		if enabled:
 			_Character.dir = provider_dir

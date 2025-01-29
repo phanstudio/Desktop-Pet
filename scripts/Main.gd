@@ -45,7 +45,7 @@ func _ready():
 	# Position the world at the bottom-center of the screen
 	world_offset = Vector2i(_MainScreenRect.size.x / 2, _MainScreenRect.size.y)
 
-func _process(delta):
+func _process(_delta):
 	# Update the main window's position
 	_MainWindow.position = get_window_pos_from_camera()
 

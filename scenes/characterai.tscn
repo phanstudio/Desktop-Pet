@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://gtf6762500dr"]
+
+[ext_resource type="Script" path="res://scripts/Characterai.gd" id="1_w3hr8"]
+[ext_resource type="SpriteFrames" uid="uid://by4j2cyctqw64" path="res://Pixel Adventure 2/pig.tres" id="2_c02ay"]
+[ext_resource type="SpriteFrames" uid="uid://dqdlohkbcsae1" path="res://Pixel Adventure 2/eye_fly.tres" id="3_yf64o"]
+[ext_resource type="SpriteFrames" uid="uid://dhg2oohe0rwaj" path="res://Pixel Adventure 2/chicken.tres" id="4_76sxp"]
+[ext_resource type="SpriteFrames" uid="uid://dwljjmp51momy" path="res://Pixel Adventure 2/slime.tres" id="5_7ko7d"]
+[ext_resource type="Script" path="res://scripts/movement_providers/MovementProviderPlayer.gd" id="7_f2uvy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6p1b"]
+size = Vector2(17, 14)
+
+[node name="Character" type="CharacterBody2D"]
+visibility_layer = 2
+script = ExtResource("1_w3hr8")
+forms = Array[SpriteFrames]([ExtResource("2_c02ay"), ExtResource("3_yf64o"), ExtResource("4_76sxp"), ExtResource("5_7ko7d")])
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+visibility_layer = 2
+texture_filter = 1
+position = Vector2(0, -6.5)
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("4_76sxp")
+animation = &"walk"
+autoplay = "idle"
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -7)
+shape = SubResource("RectangleShape2D_c6p1b")
+
+[node name="Movement Provider Ai" type="Node" parent="."]
+script = ExtResource("7_f2uvy")
+action_left = "move_left"
+action_right = "move_right"
+action_jump = "move_up"
+character = NodePath("..")
+
+[node name="EdgeCheck" type="RayCast2D" parent="."]
+position = Vector2(0, -7)
+target_position = Vector2(10, 0)
+collision_mask = 2
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0

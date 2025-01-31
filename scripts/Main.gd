@@ -43,6 +43,7 @@ func _ready():
 	# -------------------------------------------
 
 	# Position the world at the bottom-center of the screen
+	@warning_ignore("integer_division")
 	world_offset = Vector2i(_MainScreenRect.size.x / 2, _MainScreenRect.size.y)
 
 func _process(_delta):
